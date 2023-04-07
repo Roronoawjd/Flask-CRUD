@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+</head>
+
+<body>
+    <h1><a href="/">WEB</a></h1>
+    <ol>
+        {% for topic in topics%}
+        <li><a href="/read/{{topic['id']}}">{{topic['title']}}</a></li>
+        {% endfor %}
+    </ol>
+    <h2>{{title}}</h2>
+    {{body}}
+    <ul>
+        <li><a href="/create/">Create</a></li>
+        <li><a href="/update/{{id}}">Update</a></li>
+        <li>
+            <form action="/delete/{{id}}/" method="post"><input type="submit" value="delete"></form>
+        </li>
+    </ul>
+</body>
+
+</html>
